@@ -16,7 +16,7 @@ function countStudents(path) {
       }
 
       const students = lines.slice(1);
-      const output = [`Number of students: ${students.length}`];
+      console.log(`Number of students: ${students.length}`);
 
       const fields = {};
       for (const student of students) {
@@ -30,12 +30,11 @@ function countStudents(path) {
       }
 
       for (const [field, names] of Object.entries(fields)) {
-        output.push(
+        console.log(
           `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`,
         );
       }
 
-      console.log(output.join('\n'));
       resolve();
     });
   });
